@@ -1,2 +1,3 @@
 # SailKit
-The visual API for the SailSDK
+
+A description of this package.
