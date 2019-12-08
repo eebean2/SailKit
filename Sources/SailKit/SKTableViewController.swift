@@ -1,16 +1,19 @@
-//
-//  File.swift
-//  
-//
-//  Created by Erik Bean on 9/21/19.
-//
+/*
+ * SailSDK
+ *
+ * Created by Erik Bean on 9/21/19.
+ * © 2019 Brick Water Studios. All rights reserved.
+ */
 
 import Foundation
 import CoreGraphics
 import SailSDK
 
+@available(*, renamed: "SKTableViewController")
+open class SailTableViewController{}
+
 @available(iOS 6.0, macOS 10.8, tvOS 9.0, watchOS 2.0, *)
-public class SailTableViewController: SLTableViewController, Sail {
+open class SKTableViewController: SLTableViewController, Sail {
     
     /// Module ID
     public let id: UUID
