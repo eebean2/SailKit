@@ -7,8 +7,6 @@
 
 import SailSDK
 
-#endif
-
 public struct SKMessage: Sail {
     public var id: UUID = UUID()
     public var moduleName: String = ""
