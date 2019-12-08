@@ -9,9 +9,12 @@ import Foundation
 import CoreGraphics
 import SailSDK
 
+@available(*, renamed: "SKView")
+open class SailView{}
+
 /// A custom UIView conforming to the Sail Protocol
 @available(iOS 6.0, tvOS 9.0, macOS 10.8, *) // watchOS 2.0
-open class SailView: SLView, Sail {
+open class SKView: SLView, Sail {
     /// Module ID
     public let id: UUID
     /// Module Name
@@ -21,6 +24,7 @@ open class SailView: SLView, Sail {
     public init() {
         self.id = UUID()
         super.init(frame: .zero)
+        self.moduleName = String(describing: classForCoder.self)
     }
     
     /// Initializes and returns a newly allocated view object with the specified frame rectangle.
@@ -43,11 +47,13 @@ open class SailView: SLView, Sail {
     public override init(frame: CGRect) {
         self.id = UUID()
         super.init(frame: frame)
+        self.moduleName = String(describing: classForCoder.self)
     }
     
     public required init?(coder: NSCoder) {
         self.id = UUID()
         super.init(coder: coder)
+        self.moduleName = String(describing: classForCoder.self)
     }
     
     open override var description: String {
