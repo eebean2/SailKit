@@ -6,6 +6,7 @@
  */
 
 import SailSDK
+import Foundation
 
 public struct SKMessage: Sail {
     public var id: UUID = UUID()
