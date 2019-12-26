@@ -8,7 +8,7 @@
 /// Base color scheme for the Sail Project
 ///
 /// Todo: Add support for overrides
-@available(iOS 2.0, tvOS 9.0, watchOS, 2.0, macOS 10.9, *)
+@available(iOS 2.0, tvOS 9.0, watchOS 2.0, macOS 10.9, *)
 extension SKColor {
     public static var backgroundColor: SKColor {
         return SKColor(red: 13/255, green: 13/255, blue: 13/255, alpha: 13/255)

@@ -17,4 +17,3 @@ public typealias SLLabel = UILabel
 public typealias SKColor = UIColor
 public typealias SKImage = UIImage
 #endif
-public typealias SLObject = NSObject

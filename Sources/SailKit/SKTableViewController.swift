@@ -9,9 +9,6 @@ import Foundation
 import CoreGraphics
 import SailSDK
 
-@available(*, renamed: "SKTableViewController")
-open class SailTableViewController{}
-
 @available(iOS 6.0, macOS 10.8, tvOS 9.0, watchOS 2.0, *)
 open class SKTableViewController: SLTableViewController, Sail {
     

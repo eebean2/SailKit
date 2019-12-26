@@ -9,9 +9,6 @@ import Foundation
 import CoreGraphics
 import SailSDK
 
-@available(*, renamed: "SKView")
-open class SailView{}
-
 /// A custom UIView conforming to the Sail Protocol
 @available(iOS 6.0, tvOS 9.0, macOS 10.8, *) // watchOS 2.0
 open class SKView: SLView, Sail {

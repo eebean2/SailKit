@@ -5,11 +5,10 @@
  * © 2019 Brick Water Studios. All rights reserved.
  */
 
+import Foundation
 import SailSDK
 
-#endif
-
-public struct SKMessage: Sail {
+@objc final public class SKMessage: NSObject, Sail {
     public var id: UUID = UUID()
     public var moduleName: String = ""
     public var username: NSAttributedString!
@@ -20,7 +19,7 @@ public struct SKMessage: Sail {
     public var editedOn: Date!
     public var isEdited = false
     
-    internal init() {
+    internal override init() {
         self.username = NSAttributedString(string: "TEST_INVALID_TEST")
         self.createdOn = Date()
     }
@@ -43,7 +42,7 @@ public struct SKMessage: Sail {
         self.createdOn = createdOn
     }
     
-    public init(user: String, message: String) {
+    public convenience init(user: String, message: String) {
         self.init(user: NSAttributedString(string: user), message: NSAttributedString(string: message))
     }
     
@@ -55,17 +54,19 @@ public struct SKMessage: Sail {
         fatalError("JulieanneSDK Error: " + #function + " hast not been setup yet")
     }
     
-    public mutating func update(_ photo: SKImage, editedOn: Date = Date()) {
+    public func update(_ photo: SKImage, editedOn: Date = Date()) {
         self.image = photo
         self.editedOn = editedOn
     }
     
-    public mutating func update(_ message: NSAttributedString, editedOn: Date = Date()) {
+    public func update(_ message: NSAttributedString, editedOn: Date = Date()) {
         self.message = message
         self.editedOn = editedOn
         self.isEdited = true
     }
 }
+
+//TODO: Add custom debug string
 
 //extension SKMessage: CustomDebugStringConvertible {
 //    var debugDescription: String {
